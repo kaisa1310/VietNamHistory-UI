@@ -1,34 +1,60 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { MainLayout } from '~/layouts'
+import { routeType } from '~/models'
+import { privateRoutes, publicRoutes, notFoundRoute } from '~/routes'
+import { getAccessTokenFromLocalStorage } from '~/utils'
+import { Navigate, Route, BrowserRouter as Router, Routes } from 'react-router-dom'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const isLoggedIn = getAccessTokenFromLocalStorage
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <Router>
+      <div className="App">
+        <Routes>
+          {publicRoutes.map((item: routeType, index: number) => {
+            let Layout: React.ComponentType<any> = MainLayout
+            if (item.layout) {
+              Layout = item.layout as React.ComponentType<any>
+            }
+
+            const Page = item.element
+            return (
+              <Route
+                key={index}
+                path={item.path}
+                element={
+                  <Layout>
+                    <Page />
+                  </Layout>
+                }
+              />
+            )
+          })}
+
+          {privateRoutes.map((item: routeType, index: number) => {
+            const Page = item.element
+            const Layout = item.layout || MainLayout
+            return (
+              <Route
+                key={index}
+                path={item.path}
+                element={
+                  isLoggedIn ? (
+                    <Layout>
+                      <Page />
+                    </Layout>
+                  ) : (
+                    <Navigate to="/sigin" replace />
+                  )
+                }
+              />
+            )
+          })}
+
+          <Route path="*" element={<notFoundRoute.element />} />
+        </Routes>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </Router>
   )
 }
 
