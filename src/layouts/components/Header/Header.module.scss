@@ -1,0 +1,71 @@
+.wrapper {
+  padding: 0 28px;
+  height: var(--header-hight);
+  border-bottom: 1px solid #e8ebed;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+
+  img {
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    flex-shrink: 0;
+    object-fit: contain;
+  }
+
+  .header-heading {
+    color: #000;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-left: 16px;
+  }
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+
+  .myLearn {
+    color: var(--text-color);
+    font-size: 1.6rem;
+    font-weight: 600;
+    padding: 8px;
+    margin-right: 16px;
+  }
+}
+
+.header-icon {
+  font-size: 2rem;
+  opacity: 0.8;
+  transition: 0.2s linear;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.header-avatar {
+  width: 28px;
+  height: 28px;
+  margin-left: 12px;
+  cursor: pointer;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+}
