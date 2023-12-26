@@ -1,5 +1,30 @@
 @import 'normalize.css';
 
+:root {
+  --primary-color: #f05123;
+  --black-color: #000;
+  --white-color: #fff;
+  --gray-color: #666;
+  --text-color: #333;
+  --plum-color: #b80257;
+  --fb-color: #4080ff;
+  --mail-color: #f47425;
+  --invalid-color: #f33a58;
+  --desc-color: #0000008a;
+  --first-color: #1dbfaf;
+  --second-color: #1dbfaf;
+  --button-color: #1dbfaf;
+  --button-image: linear-gradient(70.06deg, #2cccff -5%, #22dfbf 106%);
+  --button-color: linear-gradient(to right bottom, #ff8f26, #ff5117);
+
+  --home-slideshow-left-space: 116px;
+  --home-section-left-space: 160px;
+
+  --header-hight: 66px;
+  --sidebar-width: 96px;
+  --search-hight: 40px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -16,8 +41,13 @@ input {
   outline: 0;
 }
 
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
 body {
   font-family: 'Roboto', sans-serif;
   font-size: 1.6rem;
-  line-height: 1.2;
+  line-height: 1.15;
 }

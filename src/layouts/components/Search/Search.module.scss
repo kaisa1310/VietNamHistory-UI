@@ -1,0 +1,32 @@
+.header-with-search {
+  display: flex;
+  align-items: center;
+  border: 2px solid #e8e8e8;
+  height: var(--search-hight);
+  padding: 0 16px 0px 8px;
+  width: 420px;
+  border-radius: 20px;
+  transition: 0.2s linear;
+
+  &:focus-within {
+    border-color: #444;
+  }
+}
+
+.search-icon {
+  width: 2.8rem;
+  height: 2.1rem;
+}
+
+.header-input {
+  caret-color: #444;
+  flex: 1 1;
+  height: 100%;
+  padding: 0 4px;
+  font-size: 1.4rem;
+}
+
+.icon-clear {
+  cursor: pointer;
+  height: 100%;
+}
