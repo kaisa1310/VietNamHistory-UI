@@ -1,12 +1,12 @@
 import styles from './Header.module.scss'
-import Button from '~/components/Button'
+import { getAccessTokenFromLocalStorage } from '~/utils'
+import Search from '../Search'
 
 import classNames from 'classnames/bind'
 import { Link } from 'react-router-dom'
-import { FaBell } from 'react-icons/fa'
-import { getAccessTokenFromLocalStorage } from '~/utils'
-import Search from '../Search'
-import Image from '~/components/Image'
+import 'tippy.js/dist/tippy.css'
+import HeaderAction from './HeaderAction'
+import HeaderAuth from './HeaderAuth'
 
 const cx = classNames.bind(styles)
 
@@ -26,23 +26,7 @@ const Header = () => {
         {/* Search */}
         <Search />
 
-        {currentUser ? (
-          <div className={cx('header-actions')}>
-            <Button className={cx('myLearn')}>Khóa học của tôi</Button>
-            <FaBell className={cx('header-icon')} />
-            <div className={cx('header-avatar')}>
-              <Image
-                src="https://fullstack.edu.vn/static/media/fallback-avatar.155cdb2376c5d99ea151.jpg"
-                alt="avatar"
-              />
-            </div>
-          </div>
-        ) : (
-          <div className={cx('header-auth')}>
-            <Button>Đăng nhập</Button>
-            <Button primary>Đăng ký</Button>
-          </div>
-        )}
+        {currentUser ? <HeaderAction /> : <HeaderAuth />}
       </div>
     </header>
   )
