@@ -1,0 +1,25 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px 16px;
+
+  .heading {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .get-all {
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    padding: 8px;
+    background-color: transparent;
+    transition: 0.2s linear;
+
+    &:hover {
+      background-color: #f1f1f1;
+      border-radius: 4px;
+    }
+  }
+}

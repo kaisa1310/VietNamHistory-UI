@@ -5,9 +5,9 @@
 
 .container {
   display: flex;
-  align-items: center;
   min-height: 100vh;
   padding: 0 28px;
+  margin-top: calc(var(--header-height) + 20px);
 }
 
 .content {
