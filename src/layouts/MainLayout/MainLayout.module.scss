@@ -6,10 +6,11 @@
 .container {
   display: flex;
   min-height: 100vh;
-  padding: 0 28px;
   margin-top: calc(var(--header-height) + 20px);
 }
 
 .content {
-  flex-shrink: 0;
+  flex: 1 1;
+  max-width: calc(100% - var(--sidebar-width));
+  padding: 0 40px 0 20px;
 }
