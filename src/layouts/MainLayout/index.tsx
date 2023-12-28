@@ -3,6 +3,8 @@ import classNames from 'classnames/bind'
 
 import styles from './MainLayout.module.scss'
 import Header from '../components/Header'
+import Sidebar from '../components/Sidebar'
+import Footer from '../components/Footer'
 
 const cx = classNames.bind(styles)
 interface MainLayoutProps {
@@ -14,10 +16,10 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
     <div className={cx('wrapper')}>
       <Header />
       <main className={cx('container')}>
-        <h2>Sidebar</h2>
+        <Sidebar />
         <div className={cx('content')}>{children}</div>
       </main>
-      <h2>Footer</h2>
+      <Footer />
     </div>
   )
 }
