@@ -7,6 +7,7 @@ import { FaBell } from 'react-icons/fa'
 import Tippy from '@tippyjs/react/headless'
 import 'tippy.js/dist/tippy.css'
 import MenuHeader from '~/components/MenuHeader'
+import { USER_MENU } from '~/constants'
 
 const cx = classNames.bind(styles)
 
@@ -96,31 +97,31 @@ const HeaderAction = () => {
               <div className={cx('user-menu')}>
                 <ul className={cx('menu-list')}>
                   <li className={cx('menu-item')}>
-                    <Link to="">Trang cá nhân</Link>
+                    <Link to="">{USER_MENU.profile}</Link>
                   </li>
                 </ul>
                 <hr />
                 <ul className={cx('menu-list')}>
                   <li className={cx('menu-item')}>
-                    <Link to="">Viết blog</Link>
+                    <Link to="">{USER_MENU.write_blog}</Link>
                   </li>
                   <li className={cx('menu-item')}>
-                    <Link to="">Bài viết của tôi</Link>
-                  </li>
-                </ul>
-                <hr />
-                <ul className={cx('menu-list')}>
-                  <li className={cx('menu-item')}>
-                    <Link to="">Bài viết đã lưu</Link>
+                    <Link to="">{USER_MENU.mePost}</Link>
                   </li>
                 </ul>
                 <hr />
                 <ul className={cx('menu-list')}>
                   <li className={cx('menu-item')}>
-                    <Link to="">Cài đặt</Link>
+                    <Link to="">{USER_MENU.meBookMarkPost}</Link>
+                  </li>
+                </ul>
+                <hr />
+                <ul className={cx('menu-list')}>
+                  <li className={cx('menu-item')}>
+                    <Link to="">{USER_MENU.settings}</Link>
                   </li>
                   <li className={cx('menu-item')}>
-                    <Link to="">Đăng xuất</Link>
+                    <Link to="">{USER_MENU.loggout}</Link>
                   </li>
                 </ul>
               </div>

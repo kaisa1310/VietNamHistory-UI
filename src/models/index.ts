@@ -1,2 +1,3 @@
 export * from './routeType'
 export * from './menu'
+export * from './common'

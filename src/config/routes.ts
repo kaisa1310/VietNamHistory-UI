@@ -5,7 +5,9 @@ const routes = {
   blog: '/blog',
   profile: '/profile',
   sigin: '/sigin',
-  sigup: '/sigup'
+  sigup: '/sigup',
+  learningPath: 'learning-path',
+  rank: 'rank'
 }
 
 export default routes
