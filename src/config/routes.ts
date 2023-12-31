@@ -6,8 +6,9 @@ const routes = {
   profile: '/profile',
   sigin: '/sigin',
   sigup: '/sigup',
-  learningPath: 'learning-path',
-  rank: 'rank'
+  learningPath: '/learning-path',
+  rank: '/rank',
+  myCourse: '/my-courses'
 }
 
 export default routes

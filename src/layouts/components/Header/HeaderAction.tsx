@@ -8,6 +8,7 @@ import Tippy from '@tippyjs/react/headless'
 import 'tippy.js/dist/tippy.css'
 import MenuHeader from '~/components/MenuHeader'
 import { USER_MENU } from '~/constants'
+import config from '~/config'
 
 const cx = classNames.bind(styles)
 
@@ -22,7 +23,7 @@ const HeaderAction = () => {
           trigger="click"
           render={(attrs) => (
             <div className={cx('my-course')} {...attrs} tabIndex={-1}>
-              <MenuHeader heading="Khóa học của tôi" />
+              <MenuHeader heading="Khóa học của tôi" to={config.routes.myCourse} />
               <div className={cx('course-list')}>
                 <div className={cx('course-item')}>
                   <div className={cx('course-img')}>
