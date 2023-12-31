@@ -75,7 +75,7 @@ const Home = () => {
         comments: 100
       }
     ])
-  }, [coursesData])
+  }, [coursesData, blogsData, videosData])
 
   return (
     <section className={cx('home')}>

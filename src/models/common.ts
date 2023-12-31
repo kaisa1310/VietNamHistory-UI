@@ -1,4 +1,4 @@
 export interface common {
-  name: string
-  to: string
+  name?: string
+  to?: string
 }

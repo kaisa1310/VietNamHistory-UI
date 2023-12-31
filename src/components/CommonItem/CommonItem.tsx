@@ -14,10 +14,11 @@ const cx = classNames.bind(styles)
 
 interface commonProps extends common {
   totalStudents?: number
-  viewMore: string
+  viewMore?: string
   course?: boolean
   blog?: boolean
   video?: boolean
+  myCourse?: boolean
   data: {
     image: string
     title: string
@@ -27,6 +28,8 @@ interface commonProps extends common {
     views?: number
     likes?: number
     comments?: number
+    progressBar?: number | string
+    conpleted?: string
     authCreated?: {
       userName: string
       avatar: string
@@ -35,7 +38,7 @@ interface commonProps extends common {
 }
 
 const CommonItem = (props: commonProps) => {
-  const { name, to, totalStudents, data, viewMore, course, blog, video } = props
+  const { name, to, totalStudents, data, viewMore, course, blog, video, myCourse } = props
 
   return (
     <div className={cx('scrolllist_vertical')}>
@@ -45,12 +48,14 @@ const CommonItem = (props: commonProps) => {
             <strong>{totalStudents}+ </strong> người đã học
           </p>
         )}
-        <div className={cx('heading-wrap')}>
-          <h2 className={cx('heading')}>{name}</h2>
-          <Link to={to} className={cx('view-all')}>
-            {viewMore} <IoIosArrowForward />
-          </Link>
-        </div>
+        {!myCourse && (
+          <div className={cx('heading-wrap')}>
+            <h2 className={cx('heading')}>{name}</h2>
+            <Link to={to ? to : ''} className={cx('view-all')}>
+              {viewMore} <IoIosArrowForward />
+            </Link>
+          </div>
+        )}
       </div>
       <div className={cx('common-list')}>
         {data &&
@@ -101,6 +106,17 @@ const CommonItem = (props: commonProps) => {
                       <FaComment />
                       <span>{item.comments}</span>
                     </div>
+                  </div>
+                )}
+
+                {/* Mycourses  */}
+                {myCourse && (
+                  <div className={cx('progress')}>
+                    <p className={cx('course-last-completed')}>{item?.conpleted}</p>
+                    <div
+                      className={cx('progressBar-wrapper')}
+                      style={{ '--progress': item?.progressBar } as React.CSSProperties}
+                    ></div>
                   </div>
                 )}
               </section>
