@@ -4,6 +4,7 @@ import styles from './MyCourses.module.scss'
 import Heading from '~/components/Heading'
 import CommonItem from '~/components/CommonItem'
 import { useEffect, useState } from 'react'
+import BreadCrumb from '~/components/BreadCrumb'
 
 const cx = classNames.bind(styles)
 
@@ -35,14 +36,17 @@ const MyCourses = () => {
   }, [myCourses])
 
   return (
-    <div className={cx('my-course')}>
-      <div className={cx('inner')}>
-        <Heading heading="Khóa học của tôi" subHeading="Bạn đã hoàn thành <strong>1/9</strong> khóa học của bạn" />
-        <div className="wrapper">
-          <CommonItem data={myCourses} myCourse />
+    <>
+      <BreadCrumb title="Khóa học của tôi" />
+      <div className={cx('my-course')}>
+        <div className={cx('inner')}>
+          <Heading heading="Khóa học của tôi" subHeading="Bạn đã hoàn thành <strong>1/9</strong> khóa học của bạn" />
+          <div className="wrapper">
+            <CommonItem data={myCourses} myCourse />
+          </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }
 

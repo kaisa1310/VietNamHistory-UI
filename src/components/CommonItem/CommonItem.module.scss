@@ -102,11 +102,13 @@
   align-items: center;
   color: #757575;
   font-size: 1.4rem;
+  cursor: text;
 
   .post-avatar {
     margin-right: 8px;
     width: 24px;
     height: 24px;
+    cursor: pointer;
 
     img {
       width: 100%;
